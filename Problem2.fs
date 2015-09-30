@@ -1,13 +1,9 @@
-﻿
 
-let rec fib x y = 
-    fib x (x + y)
 
-let rec fibFor4mill x y = 
-    let next = x + y
-    if next < 4000000 then
-        fibFor4mill y next
-    else
-        next
+let rec fib x =
+  match x with
+  | 0 -> 0
+  | 1 -> 1
+  | _ -> fib (x - 1) + fib (x - 2)
 
-printfn "Total: %i" (fibFor4mill 1 2)
+printfn "output %i" (fib 20)
